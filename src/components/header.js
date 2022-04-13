@@ -1,4 +1,5 @@
 import React from 'react'
+// import Link from "react-router-dom"
 
 const Header = () => {
   return (
@@ -16,7 +17,10 @@ const Header = () => {
               </li>
               <li className="nav-item">
                 <a href="/login" className="nav-link active">Login</a>
-                <Link to="/login">Login 2</Link>
+                {/* <Link to="/login">Login 2</Link> */}
+              </li>
+              <li className="nav-item">
+                <a href="/profile" className="nav-link active">Profile</a>
               </li>
             </ul>
             <form className="d-flex">
