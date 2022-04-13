@@ -16,6 +16,7 @@ const Header = () => {
               </li>
               <li className="nav-item">
                 <a href="/login" className="nav-link active">Login</a>
+                <Link to="/login">Login 2</Link>
               </li>
             </ul>
             <form className="d-flex">
