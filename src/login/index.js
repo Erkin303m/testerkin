@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from 'react';
-import Header from '../../components/header'
 import Axios from "axios";
 import Swal from 'sweetalert2'
 import { useNavigate } from "react-router-dom";
+import All from "../components/all"
+
 
 
 let studentData = [
@@ -32,18 +33,10 @@ const Login = () => {
     const [data2, setData2] = useState();
     const [details, setDetails] = useState({ login: "", password: "" });
     let fullData = [];
-    let number;
 
-
-    const submitHandler = e => {
-        e.preventDefault();
-        Login(details);
-        // console.log(e.target.value);
-    }
     const onChangeFun = (value, type) => {
         console.log("value", value)
-        studentData[type] = value
-        // console.log("studentData", studentData)
+        studentData[type] = value;
 
     }
 
@@ -61,7 +54,7 @@ const Login = () => {
 
     const Tekshirish = () => {
         for (let i = 0; i < data2.data.data.length; i++) {
-            if (studentData.login == data2.data.data[i].first_name && studentData.password == data2.data.data[i].id) {
+            if (studentData.login === data2.data.data[i].first_name && studentData.password == data2.data.data[i].id) {
                 console.log("password va login oxshadi");
                 navigate('/profile', {
                     state: { productName: i }
@@ -77,28 +70,22 @@ const Login = () => {
             } else {
                 console.log("error")
             }
-
-
-
         }
     }
 
     return (
-        <div>
-            <Header />
+        <All>
             <div className='container'>
-                <h1>Login qismi</h1>
-
+                <h1 className='text-center'>Sign in</h1>
                 <div className="row">
-                    <div className="col-lg-4 col-offset-4">
-
+                    <div className="col-lg-4 offset-lg-4">
                         <input
                             placeholder="Name"
                             type="text"
                             id="ism"
                             defaultValue={fullData.login}
                             onChange={(i) => { onChangeFun(i.target.value, "login") }}
-                            className="form-control" />
+                            className="form-control mt-2" />
 
                         <input
                             placeholder="ID"
@@ -106,11 +93,11 @@ const Login = () => {
                             id="password"
                             defaultValue={fullData.password}
                             onChange={(i) => { onChangeFun(i.target.value, "password") }}
-                            className="form-control"
+                            className="form-control  mt-5"
 
                         />
 
-                        <button onClick={() => Tekshirish()} className="btn btn-primary">Tekshirish</button>
+                        <button onClick={() => Tekshirish()} className="btn btn-primary mt-4">Sign in</button>
 
                     </div>
                 </div>
@@ -118,7 +105,7 @@ const Login = () => {
 
 
             </div>
-        </div>
+        </All>
     )
 }
 

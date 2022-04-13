@@ -5,26 +5,30 @@ import {
   Routes,
   Route
 } from "react-router-dom";
-import Home from "./pages/home"
-import Login from "./pages/login"
-import Profile from "./pages/profile"
+import Home from "./home"
+import Login from "./login"
+import Profile from "./profile"
 import { Provider } from 'react-redux'
 import store from './redux/state'
 
-let pathNames=[
-  {pathname:"/" , element: <Home/>},
-  { pathname: "/login", element: <Login /> },
-  { pathname: "/profile", element: <Profile /> },
-];
+// let pathNames=[
+//   {pathname:"/" , element: <Home/>},
+//   { pathname: "/login", element: <Login /> },
+//   { pathname: "/profile", element: <Profile /> },
+// ];
 
 function App() {
   return (
     <Provider store={store}>
       <Router>
         <Routes>
-          {pathNames.map((v,i)=>{
+          {/* {pathNames.map((v,i)=>{
             return <Route path={v.pathname}  element={v.element} key={i} />
-          })}
+          })} */}
+
+          <Route path="/" exact element={<Home />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/profile" element={<Profile />} />
         </Routes>
       </Router>
     </Provider>

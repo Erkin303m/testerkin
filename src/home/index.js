@@ -1,12 +1,11 @@
 import React from 'react'
-import Header from '../../components/header'
-import { Link } from 'react-router-dom'
 import { useSelector, useDispatch } from 'react-redux';
 import { AiFillHeart, AiOutlineHeart } from 'react-icons/ai';
 import { HiShoppingCart, HiOutlineShoppingCart } from 'react-icons/hi';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Carousel from 'react-bootstrap/Carousel';
 import './style.css'
+import All from "../components/all"
 
 
 const Home = () => {
@@ -26,8 +25,10 @@ const Home = () => {
     }
 
     return (
-        <div>
-            <Header />
+        <All>
+            <h1 className="mainText mb-0 mt-3">Beautiful sneakers</h1>
+            <p className="mainText">Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias ipsam numquam nulla nobis illum quam quae.</p>
+
             <Carousel className="carusel">
                 <Carousel.Item>
                     <img
@@ -109,14 +110,9 @@ const Home = () => {
                     })}
 
                 </div>
-                <h1>home qismi</h1>
-                <Link to="profile">
-                    <button className='btn btn-primary'>Keyingi page ga o'tish</button>
-
-                </Link>
             </div>
 
-        </div>
+        </All>
 
     )
 }

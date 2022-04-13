@@ -1,12 +1,11 @@
 import React from 'react'
-// import Header2 from './header2'
+import Header2 from './header'
 
-const AllPage = ({ childrern }) => {
+const AllPage = ({ children }) => {
   return (
     <div>
-      {/* <Header2 /> */}
-      {childrern}
-      <p>salom</p>
+      <Header2 />
+      {children}
     </div>
   )
 }
